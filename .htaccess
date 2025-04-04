@@ -1,0 +1,56 @@
+RewriteEngine On
+RewriteBase /CulturCampus/
+
+RewriteRule ^(.+)/(admin|css|fonts|assets|include|js|img|audios)/(.*)$ $2/$3 [L]
+
+# Redirection pour blog.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Actualite$ blog.php [L]
+
+# Redirection pour contact.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^contact_us$ contact.php [L]
+
+# Redirection pour episodes.php avec l'ID
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^episodes/(\d+)$ episodes.php?id_pr=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^episodes$ episodes.php [L]
+
+
+
+
+# Redirection pour grille_programmes.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^les_grille-programmes$ grille_programmes.php [L]
+
+# Redirection pour podcast.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^podcasts$ podcast.php [L]
+
+# Redirection pour programme.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^emission$ programme.php [L]
+
+# Redirection pour update_listeners.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^update-listeners$ update_listeners.php [L]
+
+# Redirection pour loginAdmin.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^login_admin$ loginAdmin.php [L]
+
+# Redirection pour la page d'accueil
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^accueil$ index.php [L]
